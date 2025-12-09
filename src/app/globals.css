@@ -8,20 +8,20 @@
 
 @theme {
   --color-*: initial;
-  --text-*: initial;
-  --font-*: initial;
-  --spacing-*: initial;
-
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-green1: #77b28c;
   --color-green2: #499f68;
   --color-green3: #157a6e;
+  --color-black: #07201d;
+  --color-white: #e5eee8;
   --color-gray: #a6b3ab;
 
+  --font-*: initial;
   --font-display: "Alumni Sans Pinstripe", sans-serif;
   --font-text: "Oswald", sans-serif;
 
+  --text-*: initial;
   --text-h1size: clamp(5rem, 1.07vi + 4.73rem, 6rem);
   --text-h2size: clamp(2.8rem, 0.01vi + 2.8rem, 2.81rem);
   --text-h3size: clamp(2.33rem, 0.18vi + 2.29rem, 2.5rem);
@@ -36,15 +36,16 @@
   --semibold: 400;
   --bold: 700;
 
-  --space-1: 0.25rem; /* I will die for you */
-  --space-2: 0.5rem; /* Best Friends */
-  --space-3: 1rem; /* Friends */
-  --space-4: 1.5rem; /* */
-  --space-5: 2rem; /* Casual Friends */
-  --space-6: 3rem; /* */
-  --space-7: 4rem; /* Acquaintances */
-  --space-8: 5rem; /* Distant Acquaintances */
-  --space-9: 7.5rem; /* Who are you? */
+  --spacing-*: initial;
+  --spacing-DieForYou: 0.25rem; /* I will die for you */
+  --spacing-BestFriend: 0.5rem; /* Best Friends */
+  --spacing-Friend: 1rem; /* Friends */
+  --spacing-Casual1: 1.5rem; /* */
+  --spacing-Casual2: 2rem; /* Casual Friends */
+  --spacing-Casual3: 3rem; /* */
+  --spacing-Acquaintances: 4rem; /* Acquaintances */
+  --spacing-DistantAcquaintances: 5rem; /* Distant Acquaintances */
+  --spacing-WhoAreYou: 7.5rem; /* Who are you? */
 
   --display-regular: var(--foreground) 1px;
   --display-bold: var(--foreground) 3px;
@@ -56,54 +57,59 @@
     --foreground: #e5eee8;
   }
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-text);
-  font-weight: var(--regular);
-}
-main {
-  display: grid;
-  grid-template-columns: minmax(2rem, 2fr) minmax(0, 1200px) minmax(2rem, 2fr);
-  grid-template-rows: auto 1fr;
-}
-main > *:not(.fullbleed) {
-  grid-column: 2;
-}
-.fullbleed {
-  grid-column: 1/-1;
-  display: grid;
-  grid-template-columns: subgrid;
-
-  > * {
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-text);
+    font-weight: var(--regular);
+  }
+  main {
+    display: grid;
+    grid-template-columns: minmax(2rem, 2fr) minmax(0, 1200px) minmax(2rem, 2fr);
+    grid-template-rows: auto 1fr;
+  }
+  main > *:not(.fullbleed) {
     grid-column: 2;
   }
-}
-h1 {
-  font-family: var(--font-display);
-  font-size: var(--text-h1size);
-  -webkit-text-stroke: var(--display-regular);
-}
-h2 {
-  font-size: var(--text-h2size);
-}
-h3 {
-  font-size: var(--text-h3size);
-}
-h4 {
-  font-size: var(--text-h4size);
-  font-weight: var(--medium);
-}
-h5 {
-  font-size: var(--text-h5size);
-  font-weight: var(--medium);
-}
-h6 {
-  font-size: var(--text-h6size);
-  font-weight: var(--medium);
-}
-p {
-  font-size: var(--text-bodysize);
-  font-weight: var(--semibold);
+  .fullbleed {
+    grid-column: 1/-1;
+    display: grid;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-h1size);
+  }
+  h2 {
+    font-size: var(--text-h2size);
+  }
+  h3 {
+    font-size: var(--text-h3size);
+  }
+  h4 {
+    font-size: var(--text-h4size);
+    font-weight: var(--medium);
+  }
+  h5 {
+    font-size: var(--text-h5size);
+    font-weight: var(--medium);
+  }
+  h6 {
+    font-size: var(--text-h6size);
+    font-weight: var(--medium);
+  }
+  p {
+    font-size: var(--text-bodysize);
+    font-weight: var(--semibold);
+  }
+  a {
+    font-weight: var(--medium);
+    color: var(--color-green3);
+    list-style: none;
+    text-decoration: none;
+  }
+  a:hover:not(.button) {
+    color: var(--color-foreground);
+    text-decoration: underline 1px var(--color-foreground);
+  }
 }

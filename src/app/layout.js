@@ -1,6 +1,9 @@
 import "./globals.css";
+
 import Image from "next/image";
-import Logo from "../assets/Logo.png";
+import Link from "next/link";
+
+import Logo from "./(pages)/(global)/components/Logo";
 
 export const metadata = {
   title: "Linda & Co",
@@ -10,15 +13,34 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="da">
-      <body>
-        <header className="grid grid-cols-[3fr_1fr] --space-1">
-          <Image
-            alt="Lindvig & Co logo"
-            className=""
-            src={Logo}
-            width={500}
-            height={500}
-          ></Image>
+      <body className=" grid grid-cols-1">
+        <header className=" max-h-fit col-start-1 row-start-1 z-10">
+          <nav className=" h-fit grid grid-cols-[1fr_3fr_1fr] grid-rows-2 md:grid-rows-1 gap-y-BestFriend pt-Casual2">
+            {/* Til Mobile */}
+            <Logo
+              color="#07201d"
+              style="w-[100%] max-w-[500px] h-auto justify-self-center col-start-2 md:hidden"
+            ></Logo>
+            {/*            */}
+            <ul className="flex gap-x-BestFriend justify-between md:gap-x-Casual2 md:justify-center md:items-center col-start-2 row-start-2 md:col-start-1 md:-col-end-1">
+              <Link className="text-bodysize" href={"/"}>
+                Hjem
+              </Link>
+              <Link className="text-bodysize " href={"/omos"}>
+                Om os
+              </Link>
+              <Logo
+                color="#07201d"
+                style="w-[100%] max-w-[500px] h-auto justify-self-center col-start-2 row-start-1 row-end-2 hidden md:block md:mx-Casual1"
+              ></Logo>
+              <Link className="text-bodysize" href={"/ydelser"}>
+                Ydelse
+              </Link>
+              <Link className="text-bodysize" href={"/kontakt"}>
+                Kontakt
+              </Link>
+            </ul>
+          </nav>
         </header>
         {children}
       </body>
