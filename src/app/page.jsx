@@ -1,4 +1,3 @@
-"use client";
 import Info from "./(pages)/(global)/components/Info";
 
 import { YdelseListe } from "@/api/YdelseListe";
