@@ -1,3 +1,4 @@
+import Footer from "./(pages)/(global)/components/Footer";
 import Logo from "./(pages)/(global)/components/Logo";
 import "./globals.css";
 
@@ -49,6 +50,7 @@ export default function RootLayout({ children }) {
           </nav>
         </header>
         {children}
+        <Footer />
       </body>
     </html>
   );

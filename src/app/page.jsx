@@ -9,9 +9,13 @@ export default function Home() {
   return (
     <main className="col-start-1 col-end-2 row-start-1 gap-y-Acquaintances">
       <Hero />
-      <Info Items={YdelseListe} withContact={true} />
+      <Info
+        h1="Vi har hjulpet andre med dette"
+        Items={YdelseListe}
+        withContact={true}
+      />
       <KontaktInfo />
-      <Info Items={OmosListe} withContact={false} />
+      <Info h1="Om os" Items={OmosListe} withContact={false} />
     </main>
   );
 }

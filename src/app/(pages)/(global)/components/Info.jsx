@@ -4,12 +4,12 @@ import { useState } from "react";
 
 import Icon from "./Icon";
 
-const Info = ({ Items, withContact }) => {
+const Info = ({ h1, Items, withContact }) => {
   const items = Items;
 
   const [titel, setTitel] = useState(items[0]?.titel || "");
   const [info, setListItems] = useState(items[0]?.info || []);
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(items[0]?.activeId || "");
 
   function handleYdelse({ titel, info, activeId }) {
     setTitel(titel); // set the title
@@ -18,17 +18,15 @@ const Info = ({ Items, withContact }) => {
   }
 
   return (
-    <article className="grid gap-Casual3">
-      <h1 className="text-h1size leading-Acquaintances">
-        Vi har hjulpet andre med dette
-      </h1>
-      <section className="md:min-w-[600px] grid grid-cols-[2fr_1fr] grid-rows-1 justify-self-center gap-Casual3">
+    <article className="grid gap-Casual1 md:gap-Casual3">
+      <h1 className="text-h1size leading-Acquaintances">{h1}</h1>
+      <section className="md:min-w-[600px] grid md:grid-cols-[2fr_1fr] md:grid-rows-1 justify-self-center gap-Casual1 md:gap-Casual3">
         <div>
           <h5 id="titel">{titel}</h5>
           {Array.isArray(info) ? (
             <ul
               id="list"
-              className="md:pl-Casual3 pt-BestFriend list-disc grid"
+              className="md:pl-Casual3 pt-BestFriend list-disc justify-self-center md:justify-self-center md:col-start-1"
             >
               {info.map((item, index) => (
                 <li className="" key={index}>
@@ -43,7 +41,7 @@ const Info = ({ Items, withContact }) => {
             <Link href="/ydelser">Læs mere ...</Link>
           </li>
         </div>
-        <ul className="flex flex-col gap-BestFriend pt-Casual1 ">
+        <ul className="flex gap-Friend flex-wrap md:flex-col pt-Casual1 row-start-1 md:col-start-2">
           {items.map((item, index) => {
             console.log("titel", item.titel, "info", item.info);
             return (
