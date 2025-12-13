@@ -10,7 +10,7 @@ const Hero = () => {
       <Image
         alt="Billede af Linda & Camilla"
         className="fullbleed row-start-1 row-end-2 w-full h-screen object-[75%_100%] md:object-[75%_50%] object-cover "
-        src={/assets/heroPic.png}
+        src={"/assets/heroPic.png"}
         width={900}
         height={900}
         loading="eager"
