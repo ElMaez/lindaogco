@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
             {/*            */}
             <ul className="flex gap-x-BestFriend justify-between md:gap-x-Casual2 md:justify-center md:items-center col-start-2 row-start-2 md:col-start-1 md:-col-end-1 tracking-wider">
               <li>
-                <Link className="text-bodysize" href={"/"}>
+                <Link className="text-bodysize" href={""}>
                   Hjem
                 </Link>
               </li>
