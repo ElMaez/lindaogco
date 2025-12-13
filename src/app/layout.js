@@ -22,23 +22,31 @@ export default function RootLayout({ children }) {
               style="w-[100%] max-w-[500px] h-auto justify-self-center col-start-2 md:hidden"
             ></Logo>
             {/*            */}
-            <ul className="flex gap-x-BestFriend justify-between md:gap-x-Casual2 md:justify-center md:items-center col-start-2 row-start-2 md:col-start-1 md:-col-end-1">
-              <Link className="text-bodysize" href={"/"}>
-                Hjem
-              </Link>
-              <Link className="text-bodysize " href={"/omos"}>
-                Om os
-              </Link>
+            <ul className="flex gap-x-BestFriend justify-between md:gap-x-Casual2 md:justify-center md:items-center col-start-2 row-start-2 md:col-start-1 md:-col-end-1 tracking-wider">
+              <li>
+                <Link className="text-bodysize" href={"/"}>
+                  Hjem
+                </Link>
+              </li>
+              <li>
+                <Link className="text-bodysize " href={"/omos"}>
+                  Om os
+                </Link>
+              </li>
               <Logo
                 color="#07201d"
                 style="w-[100%] max-w-[500px] h-auto justify-self-center col-start-2 row-start-1 row-end-2 hidden md:block md:mx-Casual1"
               ></Logo>
-              <Link className="text-bodysize" href={"/ydelser"}>
-                Ydelse
-              </Link>
-              <Link className="text-bodysize" href={"/kontakt"}>
-                Kontakt
-              </Link>
+              <li>
+                <Link className="text-bodysize" href={"/ydelser"}>
+                  Ydelse
+                </Link>
+              </li>
+              <li>
+                <Link className="text-bodysize" href={"/kontakt"}>
+                  Kontakt
+                </Link>
+              </li>
             </ul>
           </nav>
         </header>

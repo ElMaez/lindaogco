@@ -5,7 +5,7 @@ const Button = ({ isPrimary, titel }) => {
     return (
       <Link
         href={`/${titel}`}
-        className=" bg-green3 border-2 border-green3 rounded-xs text-white text-center w-[125px] py-BestFriend hover:bg-green2 hover:border-green2 hover:text-black hover:button]"
+        className=" bg-green3 border-2 border-green3 rounded-xs text-white text-center w-[125px] py-BestFriend hover:bg-green2 hover:border-green2 hover:text-black button tracking-wide"
       >
         {titel}
       </Link>
@@ -14,7 +14,7 @@ const Button = ({ isPrimary, titel }) => {
     return (
       <Link
         href={`/${titel}`}
-        className="border-2 border-white text-white md:border-black md:text-black text-center w-[125px] py-BestFriend hover:bg-green2 hover:button"
+        className="border-2 border-white text-white md:border-black md:text-black text-center w-[125px] py-BestFriend hover:border-white hover:text-white button tracking-wide"
       >
         {titel}
       </Link>

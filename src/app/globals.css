@@ -100,16 +100,22 @@
   }
   p {
     font-size: var(--text-bodysize);
-    font-weight: var(--semibold);
+    font-weight: var(--font-weight-light);
   }
-  a {
+  a,
+  .link {
     font-weight: var(--medium);
     color: var(--color-green3);
     list-style: none;
     text-decoration: none;
   }
-  a:hover:not(.button) {
+  a:hover:not(.button),
+  .link:hover {
     color: var(--color-foreground);
     text-decoration: underline 1px var(--color-foreground);
+  }
+
+  .selected {
+    text-decoration: underline 1px var(--color-green3);
   }
 }
