@@ -2,7 +2,6 @@
 import Image from "next/image";
 import DetaljerH from "../(pages)/(global)/components/DetaljerH";
 import DetaljerV from "../(pages)/(global)/components/DetaljerV";
-import heroPic from "/assets/heroPic.png";
 import Button from "../(pages)/(global)/components/Button";
 
 const Hero = () => {
@@ -11,7 +10,7 @@ const Hero = () => {
       <Image
         alt="Billede af Linda & Camilla"
         className="fullbleed row-start-1 row-end-2 w-full h-screen object-[75%_100%] md:object-[75%_50%] object-cover "
-        src={heroPic}
+        src={/assets/heroPic.png}
         width={900}
         height={900}
         loading="eager"
