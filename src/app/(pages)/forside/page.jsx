@@ -1,3 +1,3 @@
-export default forside = () => {
+export default function forside() {
   return <h1>Forside</h1>;
-};
+}
