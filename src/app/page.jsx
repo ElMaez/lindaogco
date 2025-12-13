@@ -1,8 +1,9 @@
 import Info from "./(pages)/(global)/components/Info";
-import Kontakt from "./(pages)/forside/components/Kontakt";
+
 import { YdelseListe } from "@/api/YdelseListe";
 import { OmosListe } from "@/api/OmosListe";
-import Hero from "./(pages)/forside/components/Hero";
+import Kontakt from "./components/Kontakt";
+import Hero from "./components/Hero";
 
 export default function Home() {
   return (
