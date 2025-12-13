@@ -1,9 +1,8 @@
 import "./globals.css";
 
-import Image from "next/image";
 import Link from "next/link";
 
-import Logo from "./(pages)/(global)/components/Logo";
+import Logo from "@/app/(pages)/(global)/components/Logo";
 
 export const metadata = {
   title: "Linda & Co",

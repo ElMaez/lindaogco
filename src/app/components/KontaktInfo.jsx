@@ -1,6 +1,8 @@
-import Button from "../../(global)/components/Button";
+"use client";
 
-const Kontakt = () => {
+import Button from "../(pages)/(global)/components/Button";
+
+const KontaktInfo = () => {
   return (
     <section className="grid justify-items-center bg-green1 fullbleed p-Casual2">
       <h1 className="text-center max-w-[20ch] leading-DistantAcquaintances">
@@ -14,4 +16,4 @@ const Kontakt = () => {
   );
 };
 
-export default Kontakt;
+export default KontaktInfo;

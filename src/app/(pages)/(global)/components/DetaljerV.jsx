@@ -1,4 +1,4 @@
-const DeljterV = ({ color, stroke, style }) => {
+const DetaljerV = ({ color, stroke, style }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -25,4 +25,4 @@ const DeljterV = ({ color, stroke, style }) => {
   );
 };
 
-export default DeljterV;
+export default DetaljerV;

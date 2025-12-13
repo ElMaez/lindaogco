@@ -15,4 +15,3 @@ export const OmosListe = [
     activeId: "overblik",
   },
 ];
-return OmosListe;

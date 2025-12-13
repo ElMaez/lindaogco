@@ -1,6 +1,6 @@
-import PhoneIcon from "../../(global)/components/Phone";
-import EmailIcon from "../../(global)/components/Email";
-import CardIcon from "../../(global)/components/Card";
+import PhoneIcon from "./Phone";
+import EmailIcon from "./Email";
+import CardIcon from "./Card";
 
 const Icon = ({ i, text, isRight }) => {
   let choosenIcon = null;
@@ -12,12 +12,12 @@ const Icon = ({ i, text, isRight }) => {
     pIcon = "col-start-1 col-end-2 row-start-1 row-end-2";
   }
 
-  if (i == "phone") {
-    choosenIcon = <PhoneIcon icon={`${pIcon}`}></PhoneIcon>;
-  } else if (i == "email") {
-    choosenIcon = <EmailIcon icon={`${pIcon}`}></EmailIcon>;
-  } else if (i == "card") {
-    choosenIcon = <CardIcon icon={`${pIcon}`}></CardIcon>;
+  if (i === "phone") {
+    choosenIcon = <PhoneIcon pIcon={`${pIcon}`}></PhoneIcon>;
+  } else if (i === "email") {
+    choosenIcon = <EmailIcon pIcon={`${pIcon}`}></EmailIcon>;
+  } else if (i === "card") {
+    choosenIcon = <CardIcon pIcon={`${pIcon}`}></CardIcon>;
   }
 
   if (isRight == false) {
