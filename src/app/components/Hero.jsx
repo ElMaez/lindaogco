@@ -34,8 +34,16 @@ const Hero = () => {
           Kom bare med opgaven – så får vi styr på det!
         </p>
         <div className="pt-Casual1 h-fit flex flex-col gap-Casual1 md:flex-row">
-          <Button isPrimary={true} titel={"Kontakt os"}></Button>
-          <Button isPrimary={false} titel={"Bliv kontaktet"}></Button>
+          <Button
+            isPrimary={true}
+            isForside={true}
+            titel={"Kontakt os"}
+          ></Button>
+          <Button
+            isPrimary={false}
+            isForside={true}
+            titel={"Bliv kontaktet"}
+          ></Button>
         </div>
       </section>
     </div>
