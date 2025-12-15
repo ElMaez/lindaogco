@@ -20,7 +20,7 @@ export default function Home() {
         h1="Om os"
         Items={OmosListe}
         withContact={false}
-        hasImg={"/assets/Linda.png"}
+        hasImg={true}
         link="/omos"
       />
     </main>

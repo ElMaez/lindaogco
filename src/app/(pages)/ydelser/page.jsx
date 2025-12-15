@@ -1,3 +1,16 @@
+import { YdelseText } from "@/api/YdelseText";
+import Info from "../(global)/components/Info";
+
 export default function Ydelser() {
-  return <h1>Ydelser</h1>;
+  return (
+    <main className="col-start-1 col-end-2 row-start-2 ">
+      <Info
+        h1=""
+        Items={YdelseText}
+        withContact={false}
+        hasImg={false}
+        isYdelse={true}
+      />
+    </main>
+  );
 }
