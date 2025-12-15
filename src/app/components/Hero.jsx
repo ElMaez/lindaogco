@@ -10,8 +10,8 @@ const Hero = () => {
         alt="Billede af Linda & Camilla"
         className="fullbleed row-start-1 row-end-2 w-full h-screen object-[75%_100%] md:object-[75%_50%] object-cover "
         src={"/assets/heroPic.png"}
-        width={900}
-        height={900}
+        width={1920}
+        height={1500}
         loading="eager"
       />
       <DetaljerV

@@ -13,11 +13,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="da">
       <body className=" grid grid-cols-1">
-        <header className=" max-h-fit col-start-1 row-start-1 z-10">
-          <nav className=" h-fit grid grid-cols-[1fr_3fr_1fr] grid-rows-2 md:grid-rows-1 gap-y-BestFriend pt-Casual2">
+        <header className=" max-h-fit col-start-1 row-start-1 z-10 ">
+          <nav className="  h-fit grid grid-cols-[1fr_3fr_1fr] grid-rows-2 md:grid-rows-1 gap-y-BestFriend pt-Casual2  ">
             {/* Til Mobile */}
             <Logo
               color="#07201d"
+              href="/"
               style="w-[100%] max-w-[500px] h-auto justify-self-center col-start-2 md:hidden"
             ></Logo>
             {/*            */}
@@ -32,10 +33,14 @@ export default function RootLayout({ children }) {
                   Om os
                 </Link>
               </li>
-              <Logo
-                color="#07201d"
-                style="w-[100%] max-w-[500px] h-auto justify-self-center col-start-2 row-start-1 row-end-2 hidden md:block md:mx-Casual1"
-              ></Logo>
+              <li>
+                <Link href="/">
+                  <Logo
+                    color="#07201d"
+                    style="w-[100%] max-w-[500px] h-auto justify-self-center col-start-2 row-start-1 row-end-2 hidden md:block md:mx-Casual1"
+                  ></Logo>
+                </Link>
+              </li>
               <li>
                 <Link className="text-bodysize" href={"/ydelser"}>
                   Ydelse

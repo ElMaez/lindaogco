@@ -26,7 +26,7 @@ const Info = ({ h1, Items, withContact }) => {
           {Array.isArray(info) ? (
             <ul
               id="list"
-              className="md:pl-Casual3 pt-BestFriend list-disc justify-self-center md:justify-self-center md:col-start-1"
+              className="md:pl-Casual3 pt-BestFriend list-disc justify-self-center md:justify-self-start md:col-start-1"
             >
               {info.map((item, index) => (
                 <li className="" key={index}>
@@ -35,7 +35,7 @@ const Info = ({ h1, Items, withContact }) => {
               ))}
             </ul>
           ) : (
-            <p className="max-w-[55ch] md:pl-Casual3">{info}</p>
+            <p className="min-w-full max-w-[55ch] ">{info}</p>
           )}
           <li className="pt-[10px] list-none">
             <Link href="/ydelser">Læs mere ...</Link>
@@ -67,8 +67,18 @@ const Info = ({ h1, Items, withContact }) => {
       </section>
       {withContact ? (
         <aside className="grid gap-DistantAcquaintances pt-Casual3 md:grid-cols-2 min-w-full max-w-[500px] md:justify-self-center">
-          <Icon i="phone" text="+45 52 30 33 11" isRight={false}></Icon>
-          <Icon i="email" text="mail@lindvigco.dk" isRight={true}></Icon>
+          <Icon
+            i="phone"
+            color="bg-green1"
+            text="+45 52 30 33 11"
+            isRight={false}
+          ></Icon>
+          <Icon
+            i="email"
+            color="bg-green1"
+            text="mail@lindvigco.dk"
+            isRight={true}
+          ></Icon>
         </aside>
       ) : (
         ""
