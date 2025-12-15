@@ -13,9 +13,16 @@ export default function Home() {
         h1="Vi har hjulpet andre med dette"
         Items={YdelseListe}
         withContact={true}
+        link="/ydelser"
       />
       <KontaktInfo />
-      <Info h1="Om os" Items={OmosListe} withContact={false} />
+      <Info
+        h1="Om os"
+        Items={OmosListe}
+        withContact={false}
+        hasImg={"/assets/Linda.png"}
+        link="/omos"
+      />
     </main>
   );
 }
