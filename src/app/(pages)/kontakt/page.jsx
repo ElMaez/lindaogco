@@ -18,7 +18,7 @@ export default function Kontakt() {
           className="grid justify-items-center md:col-start-1 md:row-start-2"
         >
           <p>Bliv kontaktet af os</p>
-          <fieldset className="justify-items-center">
+          <fieldset className="justify-items-center grid gap-Friend">
             <legend className="sr-only">Bliv kontaktet af os</legend>
             {FormularListe.map((item) => {
               return (
