@@ -52,10 +52,10 @@
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
+  /* :root {
     --background: #07201d;
     --foreground: #e5eee8;
-  }
+  } */
 }
 @layer base {
   body {
