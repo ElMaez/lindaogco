@@ -16,7 +16,7 @@ const Hero = () => {
       />
       <DetaljerV
         alt="Billede af matematiske tegn som detaljer på billede af Linda og Camilla"
-        style="col-start-1 col-end-3 row-start-1 row-end-2 self-start w-full max-w-[300px] h-fit max-h-[500px] pt-Casual1 "
+        style="col-start-1 col-end-3 row-start-1 row-end-2 self-start w-full max-w-[300px] h-fit max-h-[400px] pt-Casual1 "
         width={900}
         height={900}
       />
@@ -27,7 +27,7 @@ const Hero = () => {
         height={900}
       />
       <section className="col-start-2 col-end-4 row-start-2 row-end-3  self-center md:pl-Casual1 ">
-        <h1 className="text-h2size leading-Casual3 md:leading-DistantAcquaintances md:text-h1size w-[15ch] max-w-full  text-white lg:text-black text-shadow-sm/60 md:text-shadow-md/95 lg:text-shadow-none font-bold tracking-wide">
+        <h1 className="text-h2size leading-Casual3 md:leading-DistantAcquaintances md:text-h1size w-[15ch] lg:w-[20ch] max-w-full  text-white lg:text-black text-shadow-sm/60 md:text-shadow-md/95 lg:text-shadow-none font-bold tracking-wide">
           Bruger du for mange timer på regnskabet?
         </h1>
         <p className="max-w-[25ch] md:min-w-full font-light md:font-semibold text-white lg:text-black text-shadow-[#030e0d] text-shadow-md/60 md:text-shadow-xs/95 lg:text-shadow-none pt-BestFriend tracking-wide">

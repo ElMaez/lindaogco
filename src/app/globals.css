@@ -16,6 +16,7 @@
   --color-black: #07201d;
   --color-white: #e5eee8;
   --color-gray: #a6b3ab;
+  --color-Error: #9e2e2e;
 
   --font-*: initial;
   --font-display: "Alumni Sans Pinstripe", sans-serif;
@@ -111,8 +112,9 @@
   }
   a:hover:not(.button),
   .link:hover {
-    color: var(--color-foreground);
-    text-decoration: underline 1px var(--color-foreground);
+    color: var(--foreground);
+    text-decoration: underline 2px var(--foreground);
+    /* text-underline-offset: 4px;   */
   }
 
   .selected {

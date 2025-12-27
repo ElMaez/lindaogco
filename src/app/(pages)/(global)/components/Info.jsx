@@ -14,15 +14,15 @@ const Info = ({ h1, Items, withContact, hasImg, link, isOmos, isYdelse }) => {
   const [imgLink, setimgLink] = useState(items[0]?.imgLink || "");
 
   function handleYdelse({ titel, info, activeId, imgLink }) {
-    setTitel(titel); // set the title
-    setListItems(info); // set the list
+    setTitel(titel);
+    setListItems(info);
     setActive(activeId);
     setimgLink(imgLink);
   }
 
   return (
-    <article className="grid gap-Casual1 md:gap-Casual3">
-      <h1 className="text-h1size leading-Acquaintances">{h1}</h1>
+    <article>
+      <h1 className="text-h1size leading-Acquaintances pb-Casual2">{h1}</h1>
       {hasImg ? (
         <section className="md:min-w-[600px] grid md:grid-cols-[1fr_2fr_1fr] md:grid-rows-[40px_1fr] justify-self-center gap-Casual1 md:gap-x-Acquaintances">
           <h5 className="col-start-1 ">{titel}</h5>
@@ -60,18 +60,20 @@ const Info = ({ h1, Items, withContact, hasImg, link, isOmos, isYdelse }) => {
               )}
             </div>
           ) : (
-            <div className="md:row-start-2 md:-row-end-1 md:col-start-2 ">
-              <div className="grid overflow-hidden line-clamp-10 max-h-[220px] md:max-h-[420px] gap-Casual2">
-                {info.split("\n\n").map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
+            // Forside Om os
+            <div className=" md:row-start-2 md:-row-end-1 md:col-start-2">
+              <div className="h-[280px] overflow-hidden [mask-image:linear-gradient(to_bottom,black_0px,black_calc(100%_-72px),transparent_91%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0px,black_calc(100%_-72px),transparent_91%)]">
+                <div className="grid gap-Casual2 min-w-[25ch] max-w-full">
+                  {info.split("\n\n").map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
               </div>
-              {link ? (
-                <li className="pt-[10px] list-none">
-                  <Link href={link}>Læs mere ...</Link>
+
+              {link && (
+                <li className=" list-none">
+                  <Link href={link}>Læs mere …</Link>
                 </li>
-              ) : (
-                ""
               )}
             </div>
           )}
@@ -103,7 +105,7 @@ const Info = ({ h1, Items, withContact, hasImg, link, isOmos, isYdelse }) => {
         </section>
       ) : // Ydelses Page uden Img
       isYdelse ? (
-        <section className="md:min-w-[600px] grid md:grid-cols-[2fr_1fr] md:grid-rows-[50px_1fr] justify-self-center gap-Casual1 md:gap-BestFriend">
+        <section className="md:min-w-[600px] grid md:grid-cols-[2fr_1fr] md:grid-rows-[50px_1fr] justify-self-center">
           <h5 className="md:col-start-1 md:row-end-2">{titel}</h5>
           {Array.isArray(info) ? (
             <ul className="md:pl-Casual3 list-disc justify-self-center md:justify-self-start md:col-start-1 md:srow-start-2">

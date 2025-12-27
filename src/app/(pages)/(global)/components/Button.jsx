@@ -14,7 +14,7 @@ const Button = ({ isPrimary, titel, isForside }) => {
     return (
       <Link
         href={`/kontakt`}
-        className={`border-2 border-white text-white md:border-black md:text-black text-center w-[125px] py-BestFriend hover:border-green3 hover:text-green3 button tracking-wide rounded-xs`}
+        className={`border-2 border-white text-white bg-black/40 md:bg-black/0 md:border-black md:text-black text-center w-[125px] py-BestFriend hover:border-green3 hover:text-green3 button tracking-wide rounded-xs`}
       >
         {titel}
       </Link>

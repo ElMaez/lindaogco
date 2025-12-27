@@ -6,6 +6,11 @@ import DetaljerSektion from "./DetaljerSektion";
 const Footer = () => {
   return (
     <footer className=" bg-green1 grid grid-cols-1 grid-rows-1 max-h-[500px] mt-Acquaintances">
+      <div className="w-full h-full overflow-hidden col-start-1 -col-end-1 row-start-1 -row-end-1 pointer-events-none">
+        <DetaljerSektion
+          style={"w-full h-full object-cover pointer-events-none"}
+        ></DetaljerSektion>
+      </div>
       <div className=" col-start-1 -col-end-1 row-start-1 -row-end-1 grid gap-BestFriend px-Casual2 py-Casual2 md:grid-cols-2 md:grid-rows-2 md:px-DistantAcquaintances">
         <Link href={"/"}>
           <Logo
@@ -75,11 +80,6 @@ const Footer = () => {
         <p className="text-green3 pt-Casual3 text-center md:col-start-2 md:-row-start-1 md:text-right">
           © lindvig & Co – 2025
         </p>
-      </div>
-      <div className="w-full h-full overflow-hidden col-start-1 -col-end-1 row-start-1 -row-end-1 pointer-events-none">
-        <DetaljerSektion
-          style={"w-full h-full object-cover pointer-events-none"}
-        ></DetaljerSektion>
       </div>
     </footer>
   );

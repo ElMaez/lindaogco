@@ -5,7 +5,7 @@ export default function Omos() {
   return (
     <main className="col-start-1 col-end-2 row-start-2 ">
       <Info
-        h1=""
+        h1="Om os"
         Items={OmosListe}
         withContact={false}
         hasImg={true}

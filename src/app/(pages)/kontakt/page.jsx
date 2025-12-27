@@ -30,7 +30,9 @@ export default function Kontakt() {
                     name={item.label}
                     placeholder={item.placeholder}
                     required={item.required}
-                    className=" w-[200px] md:w-[400px] h-[30px] rounded-xs outline-2 outline-black pl-BestFriend py-DieForYou"
+                    className={`w-[200px] md:w-[400px] h-[30px] rounded-xs outline-2  pl-BestFriend py-DieForYou ${
+                      item.required ? `outline-Error` : `outline-black`
+                    }`}
                   />
                 </div>
               );
