@@ -1,11 +1,37 @@
+"use client";
+
 import Image from "next/image";
+import { Forside } from "@/api/Forside";
 import DetaljerH from "../(pages)/(global)/components/DetaljerH";
 import DetaljerV from "../(pages)/(global)/components/DetaljerV";
 import Button from "../(pages)/(global)/components/Button";
+import { useRef, useState } from "react";
+
+const ROTATION_INTERVAL = 6000; // ms
 
 const Hero = () => {
+  const [index, setIndex] = useState(0);
+  const started = useRef(false);
+
+  const startRotation = () => {
+    if (started.current) return;
+    started.current = true;
+
+    const rotate = () => {
+      setIndex((prev) => (prev + 1) % Forside.length);
+      setTimeout(rotate, ROTATION_INTERVAL);
+    };
+
+    setTimeout(rotate, ROTATION_INTERVAL);
+  };
+
+  // start once
+  if (!started.current) {
+    startRotation();
+  }
+
   return (
-    <div className="fullbleed h-screen bg-black grid grid-cols-[minmax(2rem,2fr)_minmax(0,50%)_minmax(0,50%)_minmax(2rem,2fr)] grid-rows-2">
+    <div className="fullbleed h-screen bg-black grid grid-cols-[minmax(2rem,2fr)_minmax(0,50%)_minmax(0,50%)_minmax(2rem,2fr)] grid-rows-12">
       <Image
         alt="Billede af Linda & Camilla"
         className="fullbleed row-start-1 row-end-2 w-full h-screen object-[75%_100%] md:object-[75%_50%] object-cover "
@@ -14,26 +40,17 @@ const Hero = () => {
         height={1500}
         loading="eager"
       />
-      <DetaljerV
-        alt="Billede af matematiske tegn som detaljer på billede af Linda og Camilla"
-        style="col-start-1 col-end-3 row-start-1 row-end-2 self-start w-full max-w-[300px] h-fit max-h-[400px] pt-Casual1 "
-        width={900}
-        height={900}
-      />
-      <DetaljerH
-        alt="Billede af matematiske tegn som detaljer på billede af Linda og Camilla"
-        style="-col-start-1 col-end-3 row-start-2 row-end-3 justify-self-end self-end w-fit max-w-full h-fit max-h-[500px] opacity-80"
-        width={900}
-        height={900}
-      />
-      <section className="col-start-2 col-end-4 row-start-2 row-end-3  self-center md:pl-Casual1 ">
-        <h1 className="text-h2size leading-Casual3 md:leading-DistantAcquaintances md:text-h1size w-[15ch] lg:w-[20ch] max-w-full  text-white lg:text-black text-shadow-sm/60 md:text-shadow-md/95 lg:text-shadow-none font-bold tracking-wide">
-          Bruger du for mange timer på regnskabet?
-        </h1>
-        <p className="max-w-[25ch] md:min-w-full font-light md:font-semibold text-white lg:text-black text-shadow-[#030e0d] text-shadow-md/60 md:text-shadow-xs/95 lg:text-shadow-none pt-BestFriend tracking-wide">
-          Kom bare med opgaven – så får vi styr på det!
-        </p>
-        <div className="pt-Casual1 h-fit flex flex-col gap-Casual1 md:flex-row">
+
+      <section className="col-start-2 col-end-4 row-start-8 row-end-9 md:row-start-8 md:row-end-11 self-center md:pl-Casual1 grid grid-cols-1 grid-row-2 z-10">
+        <div className=" bg-black/50 lg:bg-white/20 w-fit rounded-md p-Friend row-start-1">
+          <h1 className="text-h3size leading-Casual3 lg:leading-DistantAcquaintances lg:text-h1size w-full lg:w-[16ch] max-w-full text-white lg:text-black font-bold tracking-wide">
+            {Forside[index].text}
+          </h1>
+          <p className="max-w-[30ch] md:min-w-full font-light md:font-semibold text-white lg:text-black pt-BestFriend tracking-wide">
+            Kom bare med opgaven – så får vi styr på det!
+          </p>
+        </div>
+        <div className="pt-Casual1 h-fit flex flex-row gap-Casual1 md:flex-row row-start-2">
           <Button
             isPrimary={true}
             isForside={true}
@@ -46,6 +63,18 @@ const Hero = () => {
           ></Button>
         </div>
       </section>
+      <DetaljerV
+        alt="Billede af matematiske tegn som detaljer på billede af Linda og Camilla"
+        style="col-start-1 col-end-3 row-start-1 row-end-2 self-start w-full max-w-[300px] h-fit max-h-[400px] pt-Casual1 "
+        width={900}
+        height={900}
+      />
+      <DetaljerH
+        alt="Billede af matematiske tegn som detaljer på billede af Linda og Camilla"
+        style="-col-start-1 col-end-3 row-start-7 -row-end-2 justify-self-end self-end w-fit max-w-full h-fit max-h-[500px] opacity-80"
+        width={900}
+        height={900}
+      />
     </div>
   );
 };

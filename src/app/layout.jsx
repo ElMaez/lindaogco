@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="da">
       <body className=" grid grid-cols-1">
-        <Header></Header>
+        <Header />
         {children}
         <Footer />
       </body>
