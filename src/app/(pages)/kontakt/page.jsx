@@ -6,7 +6,7 @@ import Icon from "../(global)/components/Icon";
 import { useForm } from "react-hook-form";
 
 export default function Kontakt() {
-  const needed = "needed";
+  const needed = `needed`;
   const {
     register,
     handleSubmit,
@@ -30,7 +30,7 @@ export default function Kontakt() {
             console.log("Submit errors:", formErrors);
           })}
           noValidate
-          className="grid justify-items-center md:col-start-1 md:row-start-2"
+          className="grid justify-items-center md:col-start-1 md:row-start-2 "
         >
           <p>Bliv kontaktet af os</p>
           <fieldset className="justify-items-center grid gap-Friend">
@@ -49,7 +49,7 @@ export default function Kontakt() {
                         ...item.validation,
                         ...(item.type === "number" && { valueAsNumber: true }),
                       })}
-                      className={`w-[200px] md:w-[400px] h-[100px] rounded-xs border-2 pl-BestFriend py-DieForYou border-black`}
+                      className={`w-[200px] md:w-[400px] h-[100px] rounded-xs border-2 pl-BestFriend py-DieForYou `}
                     />
                   ) : (
                     <input
@@ -61,11 +61,10 @@ export default function Kontakt() {
                         ...(item.type === "number" && { valueAsNumber: true }),
                       })}
                       className={`w-[200px] md:w-[400px] h-[30px] rounded-xs border-2 pl-BestFriend py-DieForYou ${
-                        hasError ? `border-${needed}` : "border-black"
+                        hasError ? `border-needed` : `border-black`
                       }`}
                     />
                   )}
-
                   {hasError && (
                     <span className={`text-${needed}`}>
                       {errors[item.id].message}
