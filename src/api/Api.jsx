@@ -13,3 +13,23 @@ export async function getForside() {
   if (error) throw error;
   return forside;
 }
+export async function getOmOs() {
+  let { data: omOs, error } = await supabase.from("omOs").select("*");
+
+  if (error) throw error;
+  return omOs;
+}
+export async function getYdelse() {
+  let { data: ydelse, error } = await supabase.from("ydelse").select("*");
+
+  if (error) throw error;
+  return ydelse;
+}
+export async function getYdelseText() {
+  let { data: ydelseText, error } = await supabase
+    .from("ydelseText")
+    .select("*");
+
+  if (error) throw error;
+  return ydelseText;
+}
