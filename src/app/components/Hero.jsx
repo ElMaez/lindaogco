@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Forside } from "@/api/Forside";
+
 import DetaljerH from "../(pages)/(global)/components/DetaljerH";
 import DetaljerV from "../(pages)/(global)/components/DetaljerV";
 import Button from "../(pages)/(global)/components/Button";
@@ -9,7 +9,7 @@ import { useRef, useState } from "react";
 
 const ROTATION_INTERVAL = 6000; // ms
 
-const Hero = () => {
+const Hero = ({ forside }) => {
   const [index, setIndex] = useState(0);
   const started = useRef(false);
 
@@ -18,7 +18,7 @@ const Hero = () => {
     started.current = true;
 
     const rotate = () => {
-      setIndex((prev) => (prev + 1) % Forside.length);
+      setIndex((prev) => (prev + 1) % forside.length);
       setTimeout(rotate, ROTATION_INTERVAL);
     };
 
@@ -44,7 +44,7 @@ const Hero = () => {
       <section className="col-start-2 col-end-4 row-start-8 row-end-9 md:row-start-8 md:row-end-11 self-center md:pl-Casual1 grid grid-cols-1 grid-row-2 z-10">
         <div className=" bg-black/50 lg:bg-white/20 w-fit rounded-md p-Friend row-start-1">
           <h1 className="text-h3size leading-Casual3 lg:leading-DistantAcquaintances lg:text-h1size w-full lg:w-[16ch] max-w-full text-white lg:text-black font-bold tracking-wide">
-            {Forside[index].text}
+            {forside[index].text}
           </h1>
           <p className="max-w-[30ch] md:min-w-full font-light md:font-semibold text-white lg:text-black pt-BestFriend tracking-wide">
             Kom bare med opgaven – så får vi styr på det!

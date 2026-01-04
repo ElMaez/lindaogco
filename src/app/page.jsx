@@ -5,10 +5,13 @@ import { OmosListe } from "@/api/OmosListe";
 import KontaktInfo from "./components/KontaktInfo";
 import Hero from "./components/Hero";
 
-export default function Home() {
+import { getForside } from "@/api/Api";
+
+export default async function Home() {
+  const forsideData = await getForside();
   return (
     <main className="col-start-1 col-end-2 row-start-1 gap-y-Acquaintances">
-      <Hero />
+      <Hero forside={forsideData} />
       <Info
         h1="Vi har hjulpet andre med dette"
         Items={YdelseListe}
