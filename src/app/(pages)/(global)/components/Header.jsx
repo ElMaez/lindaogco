@@ -57,7 +57,7 @@ const Header = () => {
               className={`text-bodysize ${linkClass("/ydelser")}`}
               href={"/ydelser"}
             >
-              Ydelse
+              Service
             </Link>
           </li>
           <li>
