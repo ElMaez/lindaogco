@@ -5,6 +5,8 @@ import { useState } from "react";
 import Icon from "./Icon";
 import Image from "next/image";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 const Info = ({ h1, Items, withContact, hasImg, link, isOmos, isYdelse }) => {
   const items = Items;
 
@@ -28,8 +30,7 @@ const Info = ({ h1, Items, withContact, hasImg, link, isOmos, isYdelse }) => {
           <h5 className="col-start-1 ">{titel}</h5>
           <div className=" h-[200px] md:h-full overflow-hidden rounded-md col-start-1 row-start-2">
             <Image
-              alt="Billede af Linda & Camilla"
-              className=""
+              alt={`Billede af ${titel}`}
               src={`${imgLink}`}
               width={1000}
               height={1000}
@@ -62,13 +63,22 @@ const Info = ({ h1, Items, withContact, hasImg, link, isOmos, isYdelse }) => {
           ) : (
             // Forside Om os
             <div className=" md:row-start-2 md:-row-end-1 md:col-start-2">
-              <div className="h-[280px] overflow-hidden [mask-image:linear-gradient(to_bottom,black_0px,black_calc(100%_-72px),transparent_91%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0px,black_calc(100%_-72px),transparent_91%)]">
-                <div className="grid gap-Casual2 min-w-[25ch] max-w-full">
-                  {info.split("\n\n").map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                  ))}
-                </div>
-              </div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={active}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="h-[280px] overflow-hidden [mask-image:linear-gradient(to_bottom,black_0px,black_calc(100%_-72px),transparent_91%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0px,black_calc(100%_-72px),transparent_91%)]"
+                >
+                  <div className="grid gap-Casual2 min-w-[25ch] max-w-full">
+                    {info.split("\n\n").map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
 
               {link && (
                 <li className=" list-none">
@@ -78,7 +88,7 @@ const Info = ({ h1, Items, withContact, hasImg, link, isOmos, isYdelse }) => {
             </div>
           )}
 
-          <ul className="flex gap-Friend flex-wrap md:flex-col pt-Casual1 row-start-1 md:col-start-3 md:row-start-2 md:-row-end-1 ">
+          <ul className=" flex gap-Friend flex-wrap md:flex-col pt-Casual1 row-start-1 md:col-start-3 md:row-start-2 md:-row-end-1 ">
             {items.map((item, index) => {
               console.log("titel", item.titel, "info", item.info);
               return (
@@ -106,9 +116,18 @@ const Info = ({ h1, Items, withContact, hasImg, link, isOmos, isYdelse }) => {
       ) : // Ydelses Page uden Img
       isYdelse ? (
         <section className="md:min-w-[600px] grid md:grid-cols-[2fr_1fr] md:grid-rows-[50px_1fr] justify-self-center">
-          <h5 className="md:col-start-1 md:row-end-2">{titel}</h5>
+          <h5
+            key={active}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="md:col-start-1 md:row-end-2"
+          >
+            {titel}
+          </h5>
           {Array.isArray(info) ? (
-            <ul className="md:pl-Casual3 list-disc justify-self-center md:justify-self-start md:col-start-1 md:srow-start-2">
+            <ul className=" md:pl-Casual3 list-disc justify-self-center md:justify-self-start md:col-start-1 md:srow-start-2">
               {info.map((item, index) => (
                 <li className="" key={index}>
                   {item}
@@ -116,11 +135,21 @@ const Info = ({ h1, Items, withContact, hasImg, link, isOmos, isYdelse }) => {
               ))}
             </ul>
           ) : (
-            <div className="grid gap-Casual2">
-              {info.split("\n\n").map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
-            </div>
+            // YdelsesSite textboks
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="grid gap-Casual2"
+              >
+                {info.split("\n\n").map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </motion.div>
+            </AnimatePresence>
           )}
           {link ? (
             <li className="pt-[10px] list-none col-start-1">
@@ -155,16 +184,25 @@ const Info = ({ h1, Items, withContact, hasImg, link, isOmos, isYdelse }) => {
           </ul>
         </section>
       ) : (
-        <section className="md:min-w-[600px] grid md:grid-cols-[2fr_1fr] md:grid-rows-[1fr_3fr] justify-self-center gap-Casual1 md:gap-BestFriend">
+        <section className=" md:min-w-[600px] grid md:grid-cols-[2fr_1fr] md:grid-rows-[1fr_3fr] justify-self-center gap-Casual1 md:gap-BestFriend">
           <h5 className="md:col-start-1 md:row-end-2">{titel}</h5>
           {Array.isArray(info) ? (
-            <ul className="md:pl-Casual3 list-disc justify-self-center md:justify-self-start md:col-start-1 md:srow-start-2">
-              {info.map((item, index) => (
-                <li className="" key={index}>
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <AnimatePresence mode="wait">
+              <motion.ul
+                key={active}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4, ease: "easeIn" }}
+                className="md:pl-Casual3 list-disc justify-self-center md:justify-self-start md:col-start-1 md:srow-start-2"
+              >
+                {info.map((item, index) => (
+                  <li className="" key={index}>
+                    {item}
+                  </li>
+                ))}
+              </motion.ul>
+            </AnimatePresence>
           ) : (
             <div className="grid overflow-hidden line-clamp-10 max-h-[220px] md:max-h-[420px] gap-Casual2">
               {info.split("\n\n").map((paragraph, index) => (
